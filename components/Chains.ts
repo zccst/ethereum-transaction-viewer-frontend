@@ -13,16 +13,6 @@ export type ChainConfig = {
 
 export const SupportedChains = [
     {
-        id: 'okc',
-        displayName: 'OKC Mainnet',
-        nativeTokenAddress: '0x6eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-        nativeSymbol: 'OKT',
-        coingeckoId: 'coingecko:okex',
-        defillamaPrefix: 'okt',
-        rpcUrl: 'https://exchainrpc.okex.org',
-        blockexplorerUrl: 'https://www.oklink.com/zh-cn/okc',
-    },
-    {
         id: 'ethereum',
         displayName: 'Ethereum Mainnet',
         nativeTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
@@ -31,6 +21,16 @@ export const SupportedChains = [
         defillamaPrefix: 'ethereum',
         rpcUrl: 'https://rpc.ankr.com/eth',
         blockexplorerUrl: 'https://etherscan.io',
+    },
+    {
+        id: 'okc',
+        displayName: 'OKC Mainnet',
+        nativeTokenAddress: '0x6eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+        nativeSymbol: 'OKT',
+        coingeckoId: 'coingecko:okex',
+        defillamaPrefix: 'okt',
+        rpcUrl: 'https://exchainrpc.okex.org',
+        blockexplorerUrl: 'https://www.oklink.com/zh-cn/okc',
     },
     {
         id: 'polygon',
