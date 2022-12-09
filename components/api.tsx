@@ -60,7 +60,7 @@ export type StorageResponse = {
 };
 
 export function apiEndpoint() {
-    return process.env.NEXT_PUBLIC_API_HOST || 'https://tx.eth.samczsun.com';
+    return `${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}` || 'https://tx.eth.samczsun.com';
 }
 
 export type APIResponseError = {

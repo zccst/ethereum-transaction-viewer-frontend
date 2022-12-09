@@ -1,3 +1,4 @@
+// 导入全局样式
 import '../styles/globals.css';
 import Navbar from '../components/Navbar.tsx';
 
