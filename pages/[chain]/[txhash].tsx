@@ -78,10 +78,14 @@ export default function TransactionViewer() {
         setTraceResult(undefined);
         setTransactionMetadata(undefined);
 
+        // getTransaction  根据交易hash获取交易信息
+        // getTransactionReceipt  根据交易hash获取交易收据
         Promise.all([provider.getTransaction(txhash), provider.getTransactionReceipt(txhash)])
             .then(([transaction, receipt]) => {
+                // getBlock  返回给定参数对应的区块信息
                 provider.getBlock(receipt.blockHash).then((block) => {
                     console.log('loaded transaction metadata', transaction, receipt, block);
+                    // 交易元数据
                     setTransactionMetadata({
                         ok: true,
                         result: {
@@ -91,6 +95,9 @@ export default function TransactionViewer() {
                         },
                     });
 
+                    // 调用这两个接口
+                    // https://coins.llama.fi/prices/current/${filteredIds.join(',')}
+                    // https://coins.llama.fi/prices/historical/${when}/${filteredIds.join(',')}
                     fetchDefiLlamaPrices(setPriceMetadata, [chainConfig.coingeckoId], block.timestamp).catch((e) => {
                         console.log('failed to fetch price', e);
                     });
@@ -104,7 +111,10 @@ export default function TransactionViewer() {
                 console.log('failed to fetch transaction', e);
             });
 
-        doApiRequest<TraceResponse>(`/api/v1/trace/${chain}/${txhash}`)
+        // host：process.env.NEXT_PUBLIC_API_HOST || 'https://tx.eth.samczsun.com';
+        // 路由：/api/v1/trace/${chain}/${txhash}
+        doApiRequest<TraceResponse>(`/api/v1/trace/${chain}/${txhash}`, { mode: 'cors'})
+        // doApiRequest<TraceResponse>(`/web3/call_tracer?txid=${txhash}`)
             .then((traceResponse) => {
                 console.log('loaded trace', traceResponse);
 
