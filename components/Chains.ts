@@ -13,16 +13,6 @@ export type ChainConfig = {
 
 export const SupportedChains = [
     {
-        id: 'ethereum',
-        displayName: 'Ethereum Mainnet',
-        nativeTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-        nativeSymbol: 'ETH',
-        coingeckoId: 'coingecko:ethereum',
-        defillamaPrefix: 'ethereum',
-        rpcUrl: 'https://rpc.ankr.com/eth',
-        blockexplorerUrl: 'https://etherscan.io',
-    },
-    {
         id: 'okc',
         displayName: 'OKC Mainnet',
         nativeTokenAddress: '0x6eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
@@ -31,6 +21,16 @@ export const SupportedChains = [
         defillamaPrefix: 'okt',
         rpcUrl: 'https://exchainrpc.okex.org',
         blockexplorerUrl: 'https://www.oklink.com/zh-cn/okc',
+    } /*,
+    {
+        id: 'ethereum',
+        displayName: 'Ethereum Mainnet',
+        nativeTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+        nativeSymbol: 'ETH',
+        coingeckoId: 'coingecko:ethereum',
+        defillamaPrefix: 'ethereum',
+        rpcUrl: 'https://rpc.ankr.com/eth',
+        blockexplorerUrl: 'https://etherscan.io',
     },
     {
         id: 'polygon',
@@ -91,7 +91,7 @@ export const SupportedChains = [
         defillamaPrefix: 'fantom',
         rpcUrl: 'https://rpcapi.fantom.network',
         blockexplorerUrl: 'https://ftmscan.com',
-    },
+    },*/
 ];
 
 export const getChain = (id: string): ChainConfig | undefined => {

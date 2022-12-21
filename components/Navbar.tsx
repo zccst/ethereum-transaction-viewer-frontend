@@ -16,7 +16,7 @@ function Navbar() {
     const { chain: queryChain, txhash: queryTxhash } = router.query;
 
     // sets the default chain to ethereum.
-    const [chain, setChain] = React.useState('ethereum');
+    const [chain, setChain] = React.useState('okc');
     const [txhash, setTxhash] = React.useState('');
 
     React.useEffect(() => {
@@ -59,15 +59,15 @@ function Navbar() {
     return (
         <div>
             <Head>
-                <title>Ethereum Transaction Viewer</title>
-                <meta name="description" content="View and trace Ethereum transactions" />
+                <title>OKC Transaction Viewer</title>
+                <meta name="description" content="View and trace OKC transactions" />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Ethereum Transaction Viewer" />
-                <meta property="og:description" content="View and trace Ethereum transactions" />
+                <meta property="og:title" content="OKC Transaction Viewer" />
+                <meta property="og:description" content="View and trace OKC transactions" />
                 <meta property="og:image" content="https://tx.eth.samczsun.com/favicon.png" />
                 <meta property="twitter:card" content="summary" />
-                <meta property="twitter:title" content="Ethereum Transaction Viewer" />
-                <meta property="twitter:description" content="View and trace Ethereum transactions" />
+                <meta property="twitter:title" content="OKC Transaction Viewer" />
+                <meta property="twitter:description" content="View and trace OKC transactions" />
                 <meta property="twitter:url" content="https://tx.eth.samczsun.com" />
                 <meta property="twitter:image" content="https://tx.eth.samczsun.com/favicon.png" />
                 <meta property="twitter:site" content="@samczsun" />
@@ -81,7 +81,7 @@ function Navbar() {
                                 <Image src="/favicon.png" width={'512'} height={'512'} layout="intrinsic" />
                             </Link>
                         </div>
-                        <h1 className="md:text-xl text-sm -tracking-wider font-inter">Ethereum Transaction Viewer</h1>
+                        <h1 className="md:text-xl text-sm -tracking-wider font-inter">OKC Transaction Viewer</h1>
                         <a
                             className="md:w-5 w-4 my-auto mr-4 flex ml-auto hover:opacity-60"
                             href="https://github.com/samczsun/ethereum-transaction-viewer-frontend"
