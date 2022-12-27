@@ -78,11 +78,14 @@ export const fetchDefiLlamaPrices = (
                 }
 
                 filteredIds.forEach((id) => (newState.status[id] = 'pending'));
+                console.log(filteredIds);
+                // https://coins.llama.fi/prices/current/
+                // https://coins.llama.fi/prices/historical/
                 Promise.all([
-                    fetch(`https://coins.llama.fi/prices/current/${filteredIds.join(',')}`)
+                    fetch(`http://16.162.155.3:12444/web3/tk_price?token=OKT&filtered_ids=${filteredIds.join(',')}`, { mode: 'cors'})
                         .then((resp) => resp.json())
                         .then((resp) => resp.coins),
-                    fetch(`https://coins.llama.fi/prices/historical/${when}/${filteredIds.join(',')}`)
+                    fetch(`http://16.162.155.3:12444/web3/tk_price?ts=${when}&token=OKT&filtered_ids=${filteredIds.join(',')}`, { mode: 'cors'})
                         .then((resp) => resp.json())
                         .then((resp) => resp.coins),
                 ])
