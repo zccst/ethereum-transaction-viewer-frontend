@@ -130,9 +130,20 @@ function Navbar() {
                             type="text"
                             placeholder="Enter txhash..."
                             value={txhash}
-                            onChange={(event) => setTxhash(event.target.value)}
+                            onChange={(event) => {
+                                let txhash = event.target.value
+                                txhash = txhash.trim();
+                                if (txhash.indexOf("0x") != 0 && txhash.length == 64) {
+                                    txhash = '0x' + txhash;
+                                }
+                                setTxhash(txhash)
+                            }}
                             onKeyUp={(event) => {
                                 if (event.key === 'Enter') {
+                                    if (txhash.length != 66) {
+                                        alert("We can't recognise your txId, please check your txId format");
+                                        return false;
+                                    }
                                     router.push(`/${chain}/${txhash}`);
                                 }
                             }}
@@ -141,6 +152,10 @@ function Navbar() {
                         <button
                             className="my-auto flex hover:bg-[#cbffcb] bg-white h-full outline-1 outline outline-[#0000002d] rounded-none text-lg py-2 px-3 z-10 ml-[1px] hover:text-black"
                             onClick={() => {
+                                if (txhash.length != 66) {
+                                    alert("We can't recognise your txId, please check your txId format");
+                                    return false;
+                                }
                                 txhash ? router.push(`/${chain}/${txhash}`) : console.log('No hash entered.');
                             }}
                         >
