@@ -95,9 +95,7 @@ export default function TransactionViewer() {
                         },
                     });
 
-                    // 调用这两个接口
-                    // https://coins.llama.fi/prices/current/${filteredIds.join(',')}
-                    // https://coins.llama.fi/prices/historical/${when}/${filteredIds.join(',')}
+                    // 调用价格接口
                     fetchDefiLlamaPrices(setPriceMetadata, [chainConfig.coingeckoId], block.timestamp).catch((e) => {
                         console.log('failed to fetch price', e);
                     });

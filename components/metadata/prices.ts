@@ -82,10 +82,10 @@ export const fetchDefiLlamaPrices = (
                 // https://coins.llama.fi/prices/current/
                 // https://coins.llama.fi/prices/historical/
                 Promise.all([
-                    fetch(`http://16.162.155.3:12444/web3/tk_price?token=OKT&filtered_ids=${filteredIds.join(',')}`, { mode: 'cors'})
+                    fetch(`${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/web3/tk_price?token=OKT&filtered_ids=${filteredIds.join(',')}`, { mode: 'cors'})
                         .then((resp) => resp.json())
                         .then((resp) => resp.coins),
-                    fetch(`http://16.162.155.3:12444/web3/tk_price?ts=${when}&token=OKT&filtered_ids=${filteredIds.join(',')}`, { mode: 'cors'})
+                    fetch(`${process.env.NEXT_PUBLIC_API_HOST}:${process.env.NEXT_PUBLIC_API_PORT}/web3/tk_price?ts=${when}&token=OKT&filtered_ids=${filteredIds.join(',')}`, { mode: 'cors'})
                         .then((resp) => resp.json())
                         .then((resp) => resp.coins),
                 ])
