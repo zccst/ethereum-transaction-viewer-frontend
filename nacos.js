@@ -26,9 +26,9 @@ await client.registerInstance(serviceName, {
 // });
 
 // subscribe instance
-client.subscribe(serviceName, hosts => {
-    console.log(hosts);
-});
+// client.subscribe(serviceName, hosts => {
+//     console.log(hosts);
+// });
 
 // deregister instance
 // await client.deregisterInstance(serviceName, {
