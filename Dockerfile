@@ -35,6 +35,7 @@ RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
 COPY nacos.js ./
+COPY start.sh ./
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
@@ -47,6 +48,4 @@ EXPOSE 20059
 
 ENV PORT 20059
 
-CMD ["node", "nacos.js"]
-
-CMD ["node", "server.js"]
+CMD ["sh", "start.sh"]
