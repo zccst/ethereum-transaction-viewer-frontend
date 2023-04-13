@@ -1,5 +1,6 @@
 #!/bin/sh
 
 
-node nacos.js;
+node nacos.js &
+
 pnpm run dev;
