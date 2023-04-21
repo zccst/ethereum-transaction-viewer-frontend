@@ -14,7 +14,7 @@ export type ChainConfig = {
 export const SupportedChains = [
     {
         id: 'okc',
-        displayName: 'OKC Mainnet',
+        displayName: 'OKTC Mainnet',
         nativeTokenAddress: '0x6eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
         nativeSymbol: 'OKT',
         coingeckoId: 'coingecko:okc',
